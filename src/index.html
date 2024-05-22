@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>moon</title>
+    <h1 id="page_title">RUANG Personal Site</h1>
+    <style>
+        #page_title {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        #diary_list {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .diary {
+            width: calc(33.33% - 20px);
+        }
+
+        .diary p {
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="diary_list">
+        {{range .diarys}}
+        <div class="diary">
+            <h2>{{.Title}}</h2>
+            <time>{{.Time}}</time>
+            <p>{{.Content}}</p>
+        </div>
+        {{end}}
+    </div>
+
+</body>
+
+</html>
